@@ -44,14 +44,8 @@ public class Controller {
     }
 
     @GetMapping("/persons/by-username")
+    @PreAuthorize("authentication.principal.username == #username")
     public String getPersonsByUsername(@RequestParam("username") String username) {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String currentUsername = authentication.getName();
-
-        if (!currentUsername.equals(username)) {
-            return "Access denied: You can only view your own data";
-        }
-
         return personsRepository.findByName(username).toString();
     }
 
