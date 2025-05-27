@@ -31,11 +31,11 @@ public class SecurityConfig {
 
         UserDetails user = User.withUsername("User1")
                 .password(encoder.encode("123"))  // <-- Encode the password
-                .roles("READ")
+                .roles("WRITE")
                 .build();
         UserDetails user2 = User.withUsername("User2")
                 .password(encoder.encode("123"))
-                .roles("WRITE")
+                .roles("READ")
                 .build();
         UserDetails user3 = User.withUsername("User3")
                 .password(encoder.encode("123"))

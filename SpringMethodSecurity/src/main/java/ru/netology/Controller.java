@@ -26,12 +26,12 @@ public class Controller {
     }
 
     @GetMapping("/persons/by-city")
-    @Secured({"READ"})
+    @Secured({"WRITE"})
     public String getPersonsByCity(@RequestParam("city") String city) {
         return personsRepository.findByCity(city).toString() + " READ";
     }
 
-    @Secured({"WRITE"})
+    @Secured({"READ"})
     @GetMapping("/persons/by-name-surname")
     public String getPersonsBbyNameSurname(@RequestParam("name") String name, @RequestParam("surname") String surname) {
         return personsRepository.findAllByKeyNameAndKeySurname(name, surname).toString() + " READ";
