@@ -15,7 +15,7 @@ public class Controller {
     private final PersonsRepository personsRepository;
 
 
-    public Controller(PersonsRepository personsRepository, Key key) {
+    public Controller(PersonsRepository personsRepository) {
         this.personsRepository = personsRepository;
 
     }
