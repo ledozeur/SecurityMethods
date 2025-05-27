@@ -41,7 +41,7 @@ public class SecurityConfig {
                 .password(encoder.encode("123"))
                 .roles("DELETE")
                 .build();
-        return new InMemoryUserDetailsManager(admin, user);
+        return new InMemoryUserDetailsManager(admin, user, user2, user3);
     }
 
     @Bean

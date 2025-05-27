@@ -46,7 +46,7 @@ public class Controller {
     @GetMapping("/persons/by-username")
     @PreAuthorize("authentication.principal.username == #username")
     public String getPersonsByUsername(@RequestParam("username") String username) {
-        return personsRepository.findByName(username).toString();
+        return username;
     }
 
 }

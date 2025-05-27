@@ -18,8 +18,6 @@ public interface PersonsRepository extends JpaRepository<Person, Key> {
     @Query("SELECT p FROM Person p WHERE p.key.name = :name AND p.key.surname = :surname")
     List<Person> findAllByKeyNameAndKeySurname(@Param("name") String name, @Param("surname") String surname);
 
-    @Query("SELECT p FROM Person p WHERE p.key.name = :name")
-    List<Person> findByName(@Param("name") String name);
 
 }
 
